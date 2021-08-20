@@ -6,7 +6,7 @@
 #    By: lnoirot <lnoirot@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/08/16 12:12:45 by lnoirot           #+#    #+#              #
-#    Updated: 2021/08/19 16:30:03 by lnoirot          ###   ########.fr        #
+#    Updated: 2021/08/20 17:25:06 by lnoirot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ AFF_PAH =	./put
 MEM_PATH =	./mem
 MATHS_PATH =	./maths
 LIST_PATH =		./list
+TABLE_STR_PATH =	./table_str
 
 SRCS	=	$(GNL_PATH)/get_next_line.c \
 		$(GNL_PATH)/get_next_line_utils.c \
@@ -39,6 +40,7 @@ SRCS	=	$(GNL_PATH)/get_next_line.c \
 		$(IS_PATH)/ft_isprint.c \
 		$(IS_PATH)/ft_toupper.c \
 		$(IS_PATH)/ft_tolower.c \
+		$(IS_PATH)/is_white_space.c \
 		$(STR_PATH)/ft_strchr.c \
 		$(STR_PATH)/ft_strrchr.c \
 		$(STR_PATH)/ft_strncmp.c \
@@ -66,7 +68,13 @@ SRCS	=	$(GNL_PATH)/get_next_line.c \
 		$(LIST_PATH)/ft_lstadd_back.c \
 		$(LIST_PATH)/ft_lstdelone.c \
 		$(LIST_PATH)/ft_lstclear.c \
-		$(LIST_PATH)/ft_lstiter.c
+		$(LIST_PATH)/ft_lstiter.c \
+		$(LIST_PATH)/lst_size.c \
+		$(STR_PATH)/split_str.c \
+		$(TABLE_STR_PATH)/table_size.c \
+		$(TABLE_STR_PATH)/insert_str.c \
+		$(TABLE_STR_PATH)/free_str_table.c \
+		$(TABLE_STR_PATH)/print_str_table.c
 
 OBJS	= $(SRCS:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: lnoirot <lnoirot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 11:48:48 by lnoirot           #+#    #+#             */
-/*   Updated: 2021/08/19 16:10:23 by lnoirot          ###   ########.fr       */
+/*   Updated: 2021/08/20 17:24:35 by lnoirot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include <stdio.h>
 # include "./gnl/get_next_line.h"
 
 typedef struct s_list
@@ -67,5 +68,12 @@ int					ft_lstsize(t_list *lst);
 void				ft_lstdelone(t_list *lst, void (*del)(void *));
 void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
+char				**split_str(char *to_split, char *sep);
+int					str_table_size(char **table);
+int					is_white_space(char c);
+char				**ft_insert_str(int index, char **realloc, char *insert);
+void				free_str_table(char **to_free);
+int					lst_size(t_list *to_count);
+void				print_str_table(char **to_print);
 
 #endif
