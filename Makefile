@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lnoirot <lnoirot@student.42.fr>            +#+  +:+       +#+         #
+#    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/20 16:40:29 by lnoirot           #+#    #+#              #
-#    Updated: 2021/08/20 18:19:12 by lnoirot          ###   ########.fr        #
+#    Updated: 2021/08/21 15:58:46 by marvin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,8 +18,8 @@ CFLAGS	=	-Wall -Wextra -Werror -MMD -g3
 RM		=	rm -rf
 
 LIBFT_LIB	=	-L$(LIBFT_PATH) -lft
-INC_PATH	=	inc
-LIBFT_PATH	=	libft
+INC_PATH	=	./inc
+LIBFT_PATH	=	./libft
 INCLUDES	=	-I$(INC_PATH) -I$(LIBFT_PATH)
 LIBFT_MAKE	=	@$(MAKE) -C $(LIBFT_PATH)
 
@@ -29,7 +29,8 @@ SRCS_PATH 		=	srcs/
 PARSING_PATH	=	parsing/
 
 PARSING_LST		=	$(addprefix $(PARSING_PATH), \
-									parsing.c\
+									parsing.c \
+									create_stack.c \
 					)
 
 SRCS			=	$(addprefix $(SRCS_PATH), \
@@ -42,12 +43,12 @@ SRCS_LIST		= main.c \
 OBJS	=	$(addprefix $(OBJ_PATH), $(SRCS_LIST:.c=.o))
 
 $(OBJ_PATH)%.o:		$(SRCS_PATH)/%.c
-					$(CC) $(CFLAGS) -c $< -o $@
+					$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 DEPS	=	$(OBJS:.o=.d)
 
 all:	libft
-			@mkdir -p obj
+			@mkdir -p obj obj/parsing
 			$(MAKE) ${NAME}
 
 libft:	

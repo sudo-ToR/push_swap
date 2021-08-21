@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lnoirot <lnoirot@student.42.fr>            +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 11:48:48 by lnoirot           #+#    #+#             */
-/*   Updated: 2021/08/20 17:24:35 by lnoirot          ###   ########.fr       */
+/*   Updated: 2021/08/21 19:35:21 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,5 +75,6 @@ char				**ft_insert_str(int index, char **realloc, char *insert);
 void				free_str_table(char **to_free);
 int					lst_size(t_list *to_count);
 void				print_str_table(char **to_print);
+void				print_int_lst(int *to_print, size_t size);
 
 #endif

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lnoirot <lnoirot@student.42.fr>            +#+  +:+       +#+         #
+#    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/08/16 12:12:45 by lnoirot           #+#    #+#              #
-#    Updated: 2021/08/20 17:25:06 by lnoirot          ###   ########.fr        #
+#    Updated: 2021/08/21 19:35:15 by marvin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ MEM_PATH =	./mem
 MATHS_PATH =	./maths
 LIST_PATH =		./list
 TABLE_STR_PATH =	./table_str
+TABLE_INT_PATH =	./table_int
 
 SRCS	=	$(GNL_PATH)/get_next_line.c \
 		$(GNL_PATH)/get_next_line_utils.c \
@@ -74,7 +75,8 @@ SRCS	=	$(GNL_PATH)/get_next_line.c \
 		$(TABLE_STR_PATH)/table_size.c \
 		$(TABLE_STR_PATH)/insert_str.c \
 		$(TABLE_STR_PATH)/free_str_table.c \
-		$(TABLE_STR_PATH)/print_str_table.c
+		$(TABLE_STR_PATH)/print_str_table.c \
+		$(TABLE_INT_PATH)/print_int_lst.c
 
 OBJS	= $(SRCS:.c=.o)
 

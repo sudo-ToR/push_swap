@@ -3,46 +3,45 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lnoirot <lnoirot@student.42.fr>            +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 17:26:14 by lnoirot           #+#    #+#             */
-/*   Updated: 2021/08/20 18:24:41 by lnoirot          ###   ########.fr       */
+/*   Updated: 2021/08/21 19:34:48 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/push_swap.h"
+#include "push_swap.h"
 
-char	*concat_table(char **to_concat)
+void	free_struct_push_swap(t_push_swap *to_free)
 {
-	char	*ret;
-	char	*tmp;
-	int		i;
-
-	ret = ft_strdup(to_concat[0]);
-	if (str_table_size(to_concat) < 2)
-		return (ret);
-	ret = ft_strjoin(ret, " ");
-	i = 1;
-	while (to_concat[i])
-	{
-		tmp = ret;
-		ret = ft_strjoin(ret, ft_strdup(to_concat[i]));
-		ret = ft_strjoin(ret, " ");
-		free(tmp);
-		i++;
-	}
-	return (ret);
+	free(to_free->a);
+	free(to_free->b);
 }
 
-int		main(int ac, char **av)
+int	main(int ac, char **av)
 {
-	char	*arg;
-	int		i;
+	char			*arg;
+	t_push_swap		main;
 
-	i = 1;
 	if (ac < 2)
 		return (0);
+	ft_memset(&main, 0, sizeof(t_push_swap));
 	arg = concat_table(&av[1]);
-	printf("%s\n", arg);
+	if (check_number(arg))
+	{
+		printf("Error\n");
+		free(arg);
+		return (1);
+	}
+	create_stack_a(&main, arg);
+	if (main.len_a == 1)
+	{
+		free(arg);
+		free_struct_push_swap(&main);
+		return (0);
+	}
+	print_int_lst(main.a, main.len_a);
+	free_struct_push_swap(&main);
+	free(arg);
 	return (0);
 }
