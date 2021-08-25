@@ -1,36 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   print_stack.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/25 13:59:05 by marvin            #+#    #+#             */
-/*   Updated: 2021/08/25 14:52:02 by marvin           ###   ########.fr       */
+/*   Created: 2021/08/25 14:01:41 by marvin            #+#    #+#             */
+/*   Updated: 2021/08/25 14:45:27 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	d_swap(int *a, int *b)
+void	print_stack(int *stack_a, int *stack_b, int len_a, int len_b)
 {
-	int	tmp;
+	int	i;
 
-	tmp = a[0];
-	a[0] = a[1];
-	a[1] = tmp;
-	tmp = b[0];
-	b[0] = b[1];
-	b[1] = tmp;
-	printf("ss\n");
-}
-
-void	swap(char stack_name, int *stack)
-{
-	int	tmp;
-
-	tmp = stack[0];
-	stack[0] = stack[1];
-	stack[1] = tmp;
-	printf("s%c\n", stack_name);
+	i = 0;
+	while (i < len_a && i < len_b)
+	{
+		printf("%11d | %-11d\n", stack_a[i], stack_b[i]);
+		i++;
+	}
+	while (i < len_a)
+		{
+			printf("%11d |\n", stack_a[i]);
+			i++;
+		}
+	while (i < len_b)
+	{
+		printf(" | %-24d\n", stack_b[i]);
+		i++;
+	}
+	printf("%c\t%15c\n", 'a', 'b');
 }

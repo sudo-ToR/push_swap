@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 17:26:14 by lnoirot           #+#    #+#             */
-/*   Updated: 2021/08/25 13:31:58 by marvin           ###   ########.fr       */
+/*   Updated: 2021/08/25 15:26:40 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,12 @@ int	main(int ac, char **av)
 		return (0);
 	ft_memset(&main, 0, sizeof(t_push_swap));
 	parsing(&av[1], &main);
-	print_int_lst(main.a, main.len_a);
+	// print_stack(main.a, main.b, main.len_a, main.len_b);
+	push_b(&main);
+	push_a(&main);
+	// print_int_lst(main.a, main.len_a);
+	// d_swap(main.a, main.b);
+	// print_stack(main.a, main.b, main.len_a, main.len_b);
 	free_struct_push_swap(&main);
 	return (0);
 }

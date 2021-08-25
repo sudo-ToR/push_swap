@@ -6,7 +6,7 @@
 #    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/20 16:40:29 by lnoirot           #+#    #+#              #
-#    Updated: 2021/08/21 15:58:46 by marvin           ###   ########.fr        #
+#    Updated: 2021/08/25 15:03:27 by marvin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,18 +27,34 @@ OBJ_PATH	=	obj/
 
 SRCS_PATH 		=	srcs/
 PARSING_PATH	=	parsing/
+MVT_PATH		=	mouvements/
+DEBUG_PATH		=	debug/
 
 PARSING_LST		=	$(addprefix $(PARSING_PATH), \
 									parsing.c \
 									create_stack.c \
 					)
 
+MVT_LST			=	$(addprefix $(MVT_PATH), \
+									swap.c \
+									push.c \
+									utils.c \
+					)
+
+DEBUG_LST			=	$(addprefix $(DEBUG_PATH), \
+									print_stack.c \
+					)
+
 SRCS			=	$(addprefix $(SRCS_PATH), \
 									main.c \
 									$(PARSING_LST) \
+									$(MVT_LST) \
+									$(DEBUG_LST) \
 					)
 SRCS_LIST		= main.c \
-					$(PARSING_LST)
+					$(PARSING_LST) \
+					$(MVT_LST) \
+					$(DEBUG_LST)
 
 OBJS	=	$(addprefix $(OBJ_PATH), $(SRCS_LIST:.c=.o))
 
@@ -48,7 +64,7 @@ $(OBJ_PATH)%.o:		$(SRCS_PATH)/%.c
 DEPS	=	$(OBJS:.o=.d)
 
 all:	libft
-			@mkdir -p obj obj/parsing
+			@mkdir -p obj obj/parsing obj/mouvements obj/debug
 			$(MAKE) ${NAME}
 
 libft:	
