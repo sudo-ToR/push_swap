@@ -6,7 +6,7 @@
 #    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/08/16 12:12:45 by lnoirot           #+#    #+#              #
-#    Updated: 2021/08/21 19:35:15 by marvin           ###   ########.fr        #
+#    Updated: 2021/08/25 11:16:39 by marvin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -76,7 +76,8 @@ SRCS	=	$(GNL_PATH)/get_next_line.c \
 		$(TABLE_STR_PATH)/insert_str.c \
 		$(TABLE_STR_PATH)/free_str_table.c \
 		$(TABLE_STR_PATH)/print_str_table.c \
-		$(TABLE_INT_PATH)/print_int_lst.c
+		$(TABLE_INT_PATH)/print_int_lst.c \
+		$(MATHS_PATH)/ft_atol.c
 
 OBJS	= $(SRCS:.c=.o)
 

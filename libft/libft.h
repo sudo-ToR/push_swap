@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 11:48:48 by lnoirot           #+#    #+#             */
-/*   Updated: 2021/08/21 19:35:21 by marvin           ###   ########.fr       */
+/*   Updated: 2021/08/25 11:16:23 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,5 +76,6 @@ void				free_str_table(char **to_free);
 int					lst_size(t_list *to_count);
 void				print_str_table(char **to_print);
 void				print_int_lst(int *to_print, size_t size);
+long				ft_atol(const char *str);
 
 #endif

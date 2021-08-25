@@ -19,6 +19,7 @@ typedef struct s_push_swap
 	int			*a;
 	int			*b;
 	size_t		len_a;
+	size_t		len_b;
 	int			depth_max;
 }				t_push_swap;
 
