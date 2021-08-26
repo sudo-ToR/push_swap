@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 14:01:41 by marvin            #+#    #+#             */
-/*   Updated: 2021/08/25 14:45:27 by marvin           ###   ########.fr       */
+/*   Updated: 2021/08/26 15:05:44 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	print_stack(int *stack_a, int *stack_b, int len_a, int len_b)
 		}
 	while (i < len_b)
 	{
-		printf(" | %-24d\n", stack_b[i]);
+		printf(" %12c %d\n", '|', stack_b[i]);
 		i++;
 	}
 	printf("%c\t%15c\n", 'a', 'b');

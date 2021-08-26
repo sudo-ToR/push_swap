@@ -6,7 +6,7 @@
 #    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/20 16:40:29 by lnoirot           #+#    #+#              #
-#    Updated: 2021/08/25 15:03:27 by marvin           ###   ########.fr        #
+#    Updated: 2021/08/26 15:12:27 by marvin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,6 +38,8 @@ PARSING_LST		=	$(addprefix $(PARSING_PATH), \
 MVT_LST			=	$(addprefix $(MVT_PATH), \
 									swap.c \
 									push.c \
+									rotate.c \
+									reverse_rotate.c \
 									utils.c \
 					)
 
