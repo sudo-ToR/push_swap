@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
+#    By: tor <tor@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/20 16:40:29 by lnoirot           #+#    #+#              #
-#    Updated: 2021/08/26 15:12:27 by marvin           ###   ########.fr        #
+#    Updated: 2021/09/02 16:04:44 by tor              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,7 @@ SRCS_PATH 		=	srcs/
 PARSING_PATH	=	parsing/
 MVT_PATH		=	mouvements/
 DEBUG_PATH		=	debug/
+ALGO_PATH		=	algo/
 
 PARSING_LST		=	$(addprefix $(PARSING_PATH), \
 									parsing.c \
@@ -47,16 +48,23 @@ DEBUG_LST			=	$(addprefix $(DEBUG_PATH), \
 									print_stack.c \
 					)
 
+ALGO_LST			=	$(addprefix $(ALGO_PATH), \
+									stats.c \
+					)
+
 SRCS			=	$(addprefix $(SRCS_PATH), \
 									main.c \
 									$(PARSING_LST) \
 									$(MVT_LST) \
 									$(DEBUG_LST) \
+									$(ALGO_LST) \
 					)
+
 SRCS_LIST		= main.c \
 					$(PARSING_LST) \
 					$(MVT_LST) \
-					$(DEBUG_LST)
+					$(DEBUG_LST) \
+					$(ALGO_LST)
 
 OBJS	=	$(addprefix $(OBJ_PATH), $(SRCS_LIST:.c=.o))
 
@@ -66,7 +74,7 @@ $(OBJ_PATH)%.o:		$(SRCS_PATH)/%.c
 DEPS	=	$(OBJS:.o=.d)
 
 all:	libft
-			@mkdir -p obj obj/parsing obj/mouvements obj/debug
+			@mkdir -p obj obj/parsing obj/mouvements obj/debug obj/algo
 			$(MAKE) ${NAME}
 
 libft:	

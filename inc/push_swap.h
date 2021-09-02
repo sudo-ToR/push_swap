@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tor <tor@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 17:27:16 by lnoirot           #+#    #+#             */
-/*   Updated: 2021/08/26 15:19:05 by marvin           ###   ########.fr       */
+/*   Updated: 2021/09/02 16:00:09 by tor              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include "../libft/libft.h"
 # include "structure.h"
 # include "mouvements.h"
+# include "algo.h"
 
 int		check_number(char *to_check);
 char	*concat_table(char **to_concat);
