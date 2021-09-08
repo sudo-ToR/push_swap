@@ -3,16 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   mouvements.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tor <tor@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 15:05:42 by marvin            #+#    #+#             */
-/*   Updated: 2021/08/26 15:15:16 by marvin           ###   ########.fr       */
+/*   Updated: 2021/09/08 15:40:24 by tor              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	swap(char stack_name, int *stack);
-void	d_swap(int *a, int *b);
+#ifndef MOUVEMENTS_H
+
+# define MOUVEMENTS_H
+
+void	swap(char stack_name, int *stack, int len);
+void	swap_b(t_push_swap *main);
+void	swap_a(t_push_swap *main);
+void	d_swap(t_push_swap *main);
 void	up_one(int *stack, int size);
 void	down_one(int *stack, int size);
 void	rotate(char stack_name, int *stack, int size);
+void	rotate_a(t_push_swap *main);
+void	rotate_b(t_push_swap *main);
 void	r_rotate(char stack_name, int *stack, int size);
+void	r_rotate_a(t_push_swap *main);
+void	r_rotate_b(t_push_swap *main);
+
+#endif
