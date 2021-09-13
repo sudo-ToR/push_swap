@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tor <tor@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 14:36:27 by marvin            #+#    #+#             */
-/*   Updated: 2021/08/25 13:45:10 by marvin           ###   ########.fr       */
+/*   Updated: 2021/09/13 14:32:24 by tor              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,14 +96,14 @@ void	parsing(char **to_parse, t_push_swap *main)
 		exit (1);
 	}
 	create_stack(main, arg);
-	if (has_duplicates(main->a, main->len_a))
+	if (has_duplicates(main->a->table, main->a->len))
 	{
 		printf("Error\n");
 		free(arg);
 		free_struct_push_swap(main);
 		exit (1);
 	}
-	if (main->len_a == 1 || is_sorted_lst(main->a, main->len_a))
+	if (main->a->len == 1 || is_sorted_lst(main->a->table, main->a->len))
 	{
 		free(arg);
 		free_struct_push_swap(main);

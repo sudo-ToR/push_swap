@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   create_stack.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tor <tor@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 15:38:34 by marvin            #+#    #+#             */
-/*   Updated: 2021/08/25 13:21:23 by marvin           ###   ########.fr       */
+/*   Updated: 2021/09/13 16:38:16 by tor              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,18 @@ void	create_stack(t_push_swap *main, char *arg)
 	splited = ft_split(arg, "\f\t\n\r\v ");
 	i = 0;
 	size = str_table_size(splited);
-	main->a = malloc(sizeof(int) * size);
-	main->len_a = size;
+	main->a = malloc(sizeof(t_int_table));
+	main->b = malloc(sizeof(t_int_table));
+	main->a->table = malloc(sizeof(int) * size);
+	main->a->len = size;
 	while (splited[i])
 	{
-		main->a[i] = ft_atoi(splited[i]);
+		main->a->table[i] = ft_atoi(splited[i]);
 		i++;
 	}
 	free_str_table(splited);
-	main->b = ft_calloc(main->len_a, sizeof(int));
-	main->len_b = 0;
+	main->b->table = ft_calloc(main->a->len, sizeof(int));
+	main->b->len = 0;
 }
 
 char	*concat_table(char **to_concat)

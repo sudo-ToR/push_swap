@@ -6,7 +6,7 @@
 /*   By: tor <tor@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 17:27:16 by lnoirot           #+#    #+#             */
-/*   Updated: 2021/09/02 16:00:09 by tor              ###   ########.fr       */
+/*   Updated: 2021/09/13 14:35:18 by tor              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,5 @@ void	push_a(t_push_swap *main);
 void	d_rotate(t_push_swap *main);
 void	r_drotate(t_push_swap *main);
 
-void	print_stack(int *stack_a, int *stack_b, int len_a, int len_b);
+void	print_stack(t_int_table *a, t_int_table *b);
 #endif

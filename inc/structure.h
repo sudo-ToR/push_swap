@@ -6,13 +6,19 @@
 /*   By: tor <tor@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 15:55:44 by marvin            #+#    #+#             */
-/*   Updated: 2021/09/08 16:04:01 by tor              ###   ########.fr       */
+/*   Updated: 2021/09/13 15:09:32 by tor              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRUCTURE_H
 
 # define STRUCTURE_H
+
+typedef struct	s_int_table
+{
+	int	*table;
+	int len;
+}				t_int_table;
 
 typedef struct s_stat
 {
@@ -23,14 +29,11 @@ typedef struct s_stat
 
 typedef struct s_push_swap
 {
-	int			*a;
-	int			*b;
-	size_t		len_a;
-	size_t		len_b;
+	t_int_table	*a;
+	t_int_table	*b;
 	int			depth_max;
-	int			*mvt_to_apply;
-	int			len_mvt;
-	t_stat		stat;
+	t_stat		a_stat;
+	t_stat		b_stat;
 }				t_push_swap;
 
 #endif

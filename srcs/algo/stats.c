@@ -6,39 +6,39 @@
 /*   By: tor <tor@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/02 15:27:07 by tor               #+#    #+#             */
-/*   Updated: 2021/09/02 16:09:36 by tor              ###   ########.fr       */
+/*   Updated: 2021/09/13 14:40:35 by tor              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_min(int *tab, int size)
+int	ft_min(t_int_table *to_check)
 {
 	int ret;
 	int	i;
 
 	i = 0;
-	ret = tab[i];
-	while (i < size)
+	ret = to_check->table[i];
+	while (i < to_check->len)
 	{
-		if (tab[i] < ret)
-			ret = tab[i];
+		if (to_check->table[i] < ret)
+			ret = to_check->table[i];
 		i++;
 	}
 	return (ret);
 }
 
-int	ft_max(int *tab, int size)
+int	ft_max(t_int_table *to_check)
 {
 	int ret;
 	int	i;
 
 	i = 0;
-	ret = tab[i];
-	while (i < size)
+	ret = to_check->table[i];
+	while (i < to_check->len)
 	{
-		if (tab[i] > ret)
-			ret = tab[i];
+		if (to_check->table[i] > ret)
+			ret = to_check->table[i];
 		i++;
 	}
 	return (ret);
@@ -62,15 +62,15 @@ int	is_med(int to_test, int *tab, int size)
 	return (0);
 }
 
-int	ft_median(int *tab, int size)
+int	ft_median(t_int_table *to_check)
 {
 	int	i;
 
 	i = 0;
-	while (i < size)
+	while (i < to_check->len)
 	{
-		if (is_med(tab[i], tab, size))
-			return (tab[i]);
+		if (is_med(to_check->table[i], to_check->table, to_check->len))
+			return (to_check->table[i]);
 		i++;
 	}
 	return (-1);

@@ -3,33 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   print_stack.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tor <tor@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 14:01:41 by marvin            #+#    #+#             */
-/*   Updated: 2021/08/26 15:05:44 by marvin           ###   ########.fr       */
+/*   Updated: 2021/09/13 14:34:49 by tor              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	print_stack(int *stack_a, int *stack_b, int len_a, int len_b)
+void	print_stack(t_int_table *a, t_int_table *b)
 {
 	int	i;
 
 	i = 0;
-	while (i < len_a && i < len_b)
+	while (i < a->len && i < b->len)
 	{
-		printf("%11d | %-11d\n", stack_a[i], stack_b[i]);
+		printf("%11d | %-11d\n", a->table[i], b->table[i]);
 		i++;
 	}
-	while (i < len_a)
+	while (i < a->len)
 		{
-			printf("%11d |\n", stack_a[i]);
+			printf("%11d |\n", a->table[i]);
 			i++;
 		}
-	while (i < len_b)
+	while (i < b->len)
 	{
-		printf(" %12c %d\n", '|', stack_b[i]);
+		printf(" %12c %d\n", '|', b->table[i]);
 		i++;
 	}
 	printf("%c\t%15c\n", 'a', 'b');

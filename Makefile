@@ -6,7 +6,7 @@
 #    By: tor <tor@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/20 16:40:29 by lnoirot           #+#    #+#              #
-#    Updated: 2021/09/03 14:03:03 by tor              ###   ########.fr        #
+#    Updated: 2021/09/13 14:12:48 by tor              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,6 +52,7 @@ ALGO_LST			=	$(addprefix $(ALGO_PATH), \
 									stats.c \
 									sorting.c \
 									comparison.c \
+									comparisons_stack.c \
 					)
 
 SRCS			=	$(addprefix $(SRCS_PATH), \

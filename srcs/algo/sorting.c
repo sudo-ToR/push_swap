@@ -6,30 +6,29 @@
 /*   By: tor <tor@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/03 13:57:19 by tor               #+#    #+#             */
-/*   Updated: 2021/09/08 16:08:31 by tor              ###   ########.fr       */
+/*   Updated: 2021/09/13 16:26:01 by tor              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	create_mvt_lst()
+void	sorting_little(t_push_swap *main)
 {
+	// int	i;
 
-}
-
-void	select_mvt_lst(t_push_swap *main)
-{
-	create_mvt_lst(main);
-	if (main->len_mvt == 1)
-		return;
-}
+	while (!is_sorted_in_circle_decres(main->a))
+	{
+		if (!is_bigger(main->a->table[0], main->a->table[1]))
+			swap_a(main);
+		else
+			break;
+	}
+}	
 
 void	sorting_a(t_push_swap *main)
 {
-	while (!is_sorted_lst(main->a, main->len_a) || main->len_b)
-	{
-		if (main->len_b < 2)
-			push_b(main);
-		create_mvt_lst(main);
-	}
+	// t_int_table	instruc_lst;
+	
+	if (main->a->len <= 5)
+		sorting_little(main);
 }
