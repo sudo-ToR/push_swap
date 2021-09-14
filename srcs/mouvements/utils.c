@@ -6,7 +6,7 @@
 /*   By: tor <tor@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 15:03:06 by marvin            #+#    #+#             */
-/*   Updated: 2021/09/13 16:55:52 by tor              ###   ########.fr       */
+/*   Updated: 2021/09/14 16:27:50 by tor              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,11 @@ void	down_one(t_int_table *to_sort)
 	int	i;
 
 	i = to_sort->len;
-	while (i > 1)
+	if (!i)
+		return;
+	while (i)
 	{
-		to_sort->table[i] = to_sort->table[i + 1];
+		to_sort->table[i] = to_sort->table[i - 1];
 		i--;
 	}
 }
