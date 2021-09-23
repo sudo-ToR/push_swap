@@ -6,7 +6,7 @@
 /*   By: tor <tor@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 17:27:16 by lnoirot           #+#    #+#             */
-/*   Updated: 2021/09/13 14:35:18 by tor              ###   ########.fr       */
+/*   Updated: 2021/09/21 10:05:12 by tor              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 # include "structure.h"
 # include "mouvements.h"
 # include "algo.h"
+
+// typedef void (*t_ptr_mvt)(t_push_swap *);
 
 int		check_number(char *to_check);
 char	*concat_table(char **to_concat);
