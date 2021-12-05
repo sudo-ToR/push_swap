@@ -6,7 +6,7 @@
 /*   By: tor <tor@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 17:26:14 by lnoirot           #+#    #+#             */
-/*   Updated: 2021/09/23 11:14:34 by tor              ###   ########.fr       */
+/*   Updated: 2021/12/05 12:11:09 by tor              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,56 +20,56 @@ void	free_struct_push_swap(t_push_swap *to_free)
 	free(to_free->b);
 }
 
+int		find_index(t_push_swap *main, int index_to_find)
+{
+	int	ret;
+	int	index;
+
+	ret = 0;
+	index = -1;
+	while (++index < main->a->len)
+	{
+		if (main->a->table[index] < main->a->table[index_to_find])
+			ret++;
+	}
+	return (ret);
+}
+
+void	find_value(t_int_table *tr, t_push_swap *main)
+{
+	int		i;
+
+	i = -1;
+	while (++i < main->a->len)
+		tr->table[i] = find_index(main, i);
+}
+
+void	translate_parsed_values(t_push_swap *main)
+{
+	t_int_table	*tr;
+	t_int_table	*tmp;
+
+	tr = malloc(sizeof(t_int_table));
+	tr->table = malloc(sizeof(int) * main->a->len);
+	tr->len = main->a->len;
+	find_value(tr, main);
+	tmp = main->a;
+	main->a = tr;
+	free(tmp->table);
+	free(tmp);
+}
+
 int	main(int ac, char **av)
 {
 	t_push_swap		main;
-	// t_ptr_mvt		mvt_lst[11];
-	// typedef void (*t_ptr_mvt)(t_push_swap *);
-	// void			(*ptr_mvt[11])(t_push_swap *);
-	char			*line;
-	int				i;
 
-	i = 0;
 	if (ac < 2)
 		return (0);
 	ft_memset(&main, 0, sizeof(t_push_swap));
 	parsing(&av[1], &main);
-	int min = ft_min(main.a);
-	int max = ft_max(main.a);
-	int med = ft_median(main.a);
-	
-	// mvt_lst = {swap_a, swap_b};
-	// sorting_a(&main);
-	print_stack(main.a, main.b);
-	while (get_next_line(0, &line))
-	{
-		if (!ft_strcmp(line, "sa"))
-			swap_a(&main);
-		else if (!ft_strcmp(line, "sb"))
-			swap_b(&main);
-		else if (!ft_strcmp(line, "ss"))
-			d_swap(&main);
-		else if (!ft_strcmp(line, "pb"))
-			push_b(&main);
-		else if (!ft_strcmp(line, "pa"))
-			push_a(&main);
-		else if (!ft_strcmp(line, "ra"))
-			rotate_a(&main);
-		else if (!ft_strcmp(line, "rb"))
-			rotate_b(&main);
-		else if (!ft_strcmp(line, "rr"))
-			d_rotate(&main);
-		else if (!ft_strcmp(line, "rra"))
-			r_rotate_a(&main);
-		else if (!ft_strcmp(line, "rrb"))
-			r_rotate_b(&main);
-		else if (!ft_strcmp(line, "rrr"))
-			r_drotate(&main);	
-		i++;
-	printf("min : %d\t\tmax = %d\t\tmed = %d\n", min, max, med);
-		print_stack(main.a, main.b);
-		printf("mvt = %d\t\tsorted = %d\n", i, is_sorted_in_circle_decres(main.a));
-	}
+	translate_parsed_values(&main);
+	main.size_sample = main.a->len;
+	sorting_a(&main);
 	free_struct_push_swap(&main);
 	return (0);
 }

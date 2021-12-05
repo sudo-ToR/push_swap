@@ -6,7 +6,7 @@
 /*   By: tor <tor@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 15:38:34 by marvin            #+#    #+#             */
-/*   Updated: 2021/09/13 16:38:16 by tor              ###   ########.fr       */
+/*   Updated: 2021/12/05 12:06:28 by tor              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	create_stack(t_push_swap *main, char *arg)
 	free_str_table(splited);
 	main->b->table = ft_calloc(main->a->len, sizeof(int));
 	main->b->len = 0;
+	free(arg);
 }
 
 char	*concat_table(char **to_concat)
@@ -40,6 +41,7 @@ char	*concat_table(char **to_concat)
 	char	*ret;
 	char	*tmp;
 	int		i;
+	char	*tmp_bis;
 
 	ret = ft_strdup(to_concat[0]);
 	if (str_table_size(to_concat) < 2)
@@ -49,8 +51,12 @@ char	*concat_table(char **to_concat)
 	{
 		tmp = ret;
 		ret = ft_strjoin(ret, " ");
-		ret = ft_strjoin(ret, ft_strdup(to_concat[i]));
 		free(tmp);
+		tmp = ret;
+		tmp_bis = ft_strdup(to_concat[i]);
+		ret = ft_strjoin(ret, tmp_bis);
+		free(tmp);
+		free(tmp_bis);
 		i++;
 	}
 	return (ret);

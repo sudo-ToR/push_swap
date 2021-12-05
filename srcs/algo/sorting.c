@@ -6,7 +6,7 @@
 /*   By: tor <tor@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/03 13:57:19 by tor               #+#    #+#             */
-/*   Updated: 2021/09/23 09:42:17 by tor              ###   ########.fr       */
+/*   Updated: 2021/12/05 12:09:59 by tor              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,11 +107,37 @@ void	put_min_first(char stack_name, t_int_table *stack)
 	}
 }
 
-void	sorting_a(t_push_swap *main)
+void	sorting_big_sample(t_push_swap *main)
 {
-	// t_int_table	instruc_lst;
-	
+	int	tmp;
+	int	r_shift;
+	int	nb_bits;
+
+	nb_bits = 3;
+	main->size_sample++;
+	while (main->size_sample >> nb_bits)
+		nb_bits++;
+	r_shift = -1;
+	while (++r_shift < nb_bits /*&& !is_sorted_in_circle_decres(main->a)*/)
+	{
+		tmp = main->size_sample;
+		while (--tmp)
+		{
+			if (((main->a->table[0] >> r_shift) & 1))
+				rotate_a(main);
+			else
+				push_b(main);
+		}
+		while (main->b->len)
+			push_a(main);
+	}
+}
+
+void	sorting_a(t_push_swap *main)
+{	
 	if (main->a->len <= 5)
 		sorting_little(main);
+	else
+		sorting_big_sample(main);
 	put_min_first('a', main->a);
 }
