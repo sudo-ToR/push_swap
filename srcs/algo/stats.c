@@ -14,7 +14,7 @@
 
 int	ft_min(t_int_table *to_check)
 {
-	int ret;
+	int	ret;
 	int	i;
 
 	i = 0;
@@ -30,7 +30,7 @@ int	ft_min(t_int_table *to_check)
 
 int	ft_max(t_int_table *to_check)
 {
-	int ret;
+	int	ret;
 	int	i;
 
 	i = 0;

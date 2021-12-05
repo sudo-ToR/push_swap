@@ -46,7 +46,7 @@ void	swap(char stack_name, t_int_table *stack)
 	int	tmp;
 
 	if (stack->len < 2)
-		return;
+		return ;
 	tmp = stack->table[0];
 	stack->table[0] = stack->table[1];
 	stack->table[1] = tmp;

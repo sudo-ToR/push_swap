@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-int		last_in_table(t_int_table *to_parse)
+int	last_in_table(t_int_table *to_parse)
 {
 	return (to_parse->table[to_parse->len - 1]);
 }
@@ -35,7 +35,7 @@ void	down_one(t_int_table *to_sort)
 
 	i = to_sort->len - 1;
 	if (!i)
-		return;
+		return ;
 	while (i)
 	{
 		to_sort->table[i] = to_sort->table[i - 1];

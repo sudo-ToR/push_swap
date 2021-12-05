@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tor <tor@student.42.fr>                    +#+  +:+       +#+         #
+#    By: lnoirot <lnoirot@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/20 16:40:29 by lnoirot           #+#    #+#              #
-#    Updated: 2021/12/05 12:07:38 by tor              ###   ########.fr        #
+#    Updated: 2021/12/05 14:15:29 by lnoirot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,6 +53,7 @@ ALGO_LST			=	$(addprefix $(ALGO_PATH), \
 									sorting.c \
 									comparison.c \
 									comparisons_stack.c \
+									utils_algo.c \
 					)
 
 SRCS			=	$(addprefix $(SRCS_PATH), \

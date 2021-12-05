@@ -28,7 +28,7 @@ int	is_sorted_in_circle_cres(t_int_table *to_check)
 	while (i < to_check->len - 1)
 	{
 		if (to_check->table[i] == min && to_check->table[i + 1] != max)
-				return (0);
+			return (0);
 		else if (to_check->table[i] != min
 			&& is_bigger(to_check->table[i], to_check->table[i + 1]))
 			return (0);
@@ -55,7 +55,7 @@ int	is_sorted_in_circle_decres(t_int_table *to_check)
 	while (i < to_check->len - 1)
 	{
 		if (to_check->table[i] == max && to_check->table[i + 1] != min)
-				return (0);
+			return (0);
 		else if (to_check->table[i] != max
 			&& !is_bigger(to_check->table[i], to_check->table[i + 1]))
 			return (0);

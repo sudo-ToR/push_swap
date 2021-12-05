@@ -43,7 +43,7 @@ void	rotate(char stack_name, t_int_table *stack)
 	int	first;
 
 	if (!stack->len)
-		return;
+		return ;
 	first = stack->table[0];
 	up_one(stack);
 	stack->table[stack->len - 1] = first;

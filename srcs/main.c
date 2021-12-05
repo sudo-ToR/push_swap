@@ -20,7 +20,7 @@ void	free_struct_push_swap(t_push_swap *to_free)
 	free(to_free->b);
 }
 
-int		find_index(t_push_swap *main, int index_to_find)
+int	find_index(t_push_swap *main, int index_to_find)
 {
 	int	ret;
 	int	index;
