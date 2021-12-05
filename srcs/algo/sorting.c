@@ -6,7 +6,7 @@
 /*   By: lnoirot <lnoirot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/03 13:57:19 by tor               #+#    #+#             */
-/*   Updated: 2021/12/05 14:13:14 by lnoirot          ###   ########.fr       */
+/*   Updated: 2021/12/05 15:39:25 by lnoirot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,9 @@ void	sorting_big_sample(t_push_swap *main)
 }
 
 void	sorting_a(t_push_swap *main)
-{	
+{
+	if (is_sorted_in_circle_decres(main->a))	
+		put_min_first('a', main->a);
 	if (main->a->len <= 5)
 		sorting_little(main);
 	else
